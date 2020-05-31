@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+section {
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    color: white;
+}
+
+section:nth-child(1) {
+    background: url(/assets/iPhone\ Abandoned.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+section:nth-child(2) {
+    background: url(/assets/iPhone\ Pin.png);
+    background-position: center;
+    background-size: cover;
+}
+
+section:nth-child(3) {
+    background: url(/assets/iPhone\ Globe.png);
+    background-size: cover;
+    background-position: center;
+}
+
+section:nth-child(4) {
+    background: url(/assets/iPhone\ Future.png);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    grid-auto-columns: auto;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.content #main {
+    width: 250px;
+    height: auto;
+}
+
+.content h1 {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.3em;
+}
+
+.content .title {
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.content .download img {
+    width: 100px;
+    height: auto;
+    margin: 7px;
+}
+
+#secret {
+    font-size: 1.1em;
+}
+
+#world {
+    font-size: 1.1em;
+}
+
+#secret-spot {
+    color: #00C1ED;
+}
+
+#worlds {
+    color: #F49C4C;
+}
+
+
+
+@media(min-width: 767px) {
+ 
+    section:nth-child(1) {
+        background: url(/assets/iPad Abandoned.jpg));
+        background-position: center;
+    }
+
+    section:nth-child(2) {
+        background: url(/assets/iPad Pin.png);
+        background-position: center;
+    }
+
+    section:nth-child(3) {
+        background: url(/assets/iPad Globe.png);
+        background-position: center;
+    }
+
+    section:nth-child(4) {
+        background: url(/assets/ipad future.png));
+        background-position: center;
+    }
+    
+    .content #main {
+        width: 450px;
+        height: auto;
+    }
+
+    .content h1 {
+        font-size: 2em;
+    }
+    
+    .content .download img {
+        width: 150px;
+    }
+
+    #secret {
+        font-size: 2em;
+    }
+    
+    #world {
+        font-size: 2em;
+    }
+    
+}
+
+@media(min-width: 1024px) {
+
+    .content #main {
+        width: 650px;
+        height: auto;
+    }
+
+    .content h1 {
+        font-size: 3em;
+    }
+
+    .content .download img {
+        width: 150px;
+    }
+    
+    #secret {
+        font-size: 3em;
+    }
+    
+    #world {
+        font-size: 3em;
+    }
+    
+    
+}
+
+
+@media(min-width: 1200px) {
+    section:nth-child(1) {
+        background: url(/assets/Abandoned.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    section:nth-child(2) {
+        background: url(/assets/Secrets.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    section:nth-child(3) {
+        background: url(/assets/Globe.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    section:nth-child(4) {
+        background: url(/assets/cityxcape-future.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .content #main {
+        width: 700px;
+        height: auto;
+    }
+
+    .content h1 {
+        font-size: 3em;
+    }
+
+    #download img {
+        width: 180px;
+    }
+
+    #secret {
+        font-size: 3.5em;
+    }
+    
+    #world {
+        font-size: 3.5em;
+    }
+    
+
+    /* #download img:hover {
+        border: none;
+        offset: none;
+        background: transparent;
+        box-shadow: 0 0 10px lightblue,
+                    0 0 20px black,
+                    0 0 40px lightblue;
+        border-radius: 10px;
+    }
+     */
+}

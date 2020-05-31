@@ -1,0 +1,56 @@
+a {
+    text-decoration: none;
+}
+
+.button {
+    padding: 10px 20px;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin: 8px;
+    color: white;
+}
+
+.button.learn {
+   border: none;
+   background: rgba(101,67,33, 0.5);
+   font-size: 0.8em;
+   margin: 10px;
+}
+
+.button.learn:hover {
+    box-shadow: 0 0 10px orange,
+                0 0 20px black,
+                0 0 40px orange;
+}
+
+
+@media(min-width: 768px) {
+
+    .button {
+        padding: 15px 30px;
+        font-size: 1em;
+    }
+
+  
+}
+
+
+@media(min-width: 1024px) {
+    .button {
+        padding: 18px 26px;
+        font-size: 1em;
+    }
+
+  
+}
+
+@media(min-width: 1200px) {
+
+    .button {
+
+    }
+
+    .button.learn {
+        
+    }
+}

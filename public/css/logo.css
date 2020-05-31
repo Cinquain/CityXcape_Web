@@ -1,0 +1,27 @@
+.logo {
+    top: 0%;
+    left: 0%;
+    position: absolute;
+    padding: 15px 20px;
+}
+
+.logo a img {
+    width: 130px;
+    height: auto;
+}
+
+@media(min-width: 768px) {
+    .logo a img {
+        width: 180px;
+    }
+}
+
+@media(min-width: 1024px) {
+
+    .logo {
+        padding: 25px 25px;
+    }
+    .logo a img {
+        width: 200px;
+    }
+}

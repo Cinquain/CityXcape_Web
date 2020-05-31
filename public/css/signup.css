@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
+
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    color: white;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background: black;
+    display: flex;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+    grid-auto-columns: auto;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(/assets/iPhone\ signup.png);
+    background-size: cover;
+    background-position: center;
+
+}
+
+.main-content {
+    width: 90%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    grid-auto-columns: auto;
+}
+
+.main-content form {
+    width: 100%;
+    height: auto;
+}
+
+.main-content .field {
+    width: 100%;
+    height: 20%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 5%;
+}
+
+.main-content .field input {
+    height: 100%;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 8px;
+    border: 1px solid white;
+    text-indent: 20px;
+    background: transparent;
+    color: white;
+    font-weight: 900;
+    font-size: 1em;
+}
+
+.main-content .field input[type='radio'] {
+    height: 50%;
+    width: 50%;
+    text-indent: 0%;
+}
+
+.main-content .field input[type='submit'] {
+    text-indent: 0%;
+    height: 40px;
+    width: 120px;
+}
+
+.main-content .field input[type='submit']:hover {
+    color: black;
+    background:  orange;
+    border: none;
+    font-weight: 900;
+    box-shadow: 0 0 10px black,
+                0 0 20px orange,
+                0 0 40px black;
+}
+
+
+
+.main-content #radios {
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 8px;
+}
+
+h1 {
+    margin-top: 30%;
+    margin-bottom: 5%;
+}
+
+#iOS {
+    margin-right: 20px;
+}
+
+
+@media(min-width: 768px) {
+
+    body {
+        background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),url(/assets/iPad\ signup.png);
+        background-position: center;
+        background-size: cover;
+    }
+
+    .main-content #radios {
+        width: 30%;
+        margin: 0 auto;
+        margin-top: 8px;
+    }   
+    
+    .main-content .field input[type='radio'] {
+        height: 22px;
+    }
+
+
+}
+
+@media(min-width: 1024px) {
+
+    .main-content .field input[type='submit'] {
+        text-indent: 0%;
+        height: 50px;
+        width: 180px;
+    }
+
+ 
+   
+    
+}
+
+
+@media(min-width: 1200px) {
+
+    body {
+        background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),url(/assets/signup.jpg);
+        background-position: center;
+        background-size: cover;
+        overflow: hidden;
+        background-repeat: no-repeat;
+    }
+
+    h1 {
+        margin-top: 15%;
+        margin-bottom: 0%;
+   }
+    
+   .main-content {
+       width: 70%;
+       height: auto;
+   }
+
+    .main-content .field {
+        width: 100%;
+        height: 60px;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+
+    
+
+    .main-content #radios {
+        width: 25%;
+        margin: 0 auto;
+        margin-top: 15px;
+    }    
+
+
+
+}
