@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: url(/assets/Hexagon.png), black;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    grid-auto-columns: auto;
+    background-repeat: no-repeat;
+}
+
+
+ .article {
+    width: 90%;
+    height: 32%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    grid-auto-columns: auto;
+    margin-top: 6%;
+    color: white;
+}
+
+
+.article:first-child {
+    margin-top: 12%;
+}
+
+.article a {
+    height: 65%;
+    width: 65%;
+    margin: 2%;
+}
+
+.article img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    inset: 4px 8px;
+    transition: 0.3s;
+}
+
+.article h2 {
+    color: white;
+}
+
+.article img:hover {
+
+    box-shadow: 0 0 10px orange,
+                0 0 20px black,
+                0 0 40px orange;
+    offset: -5px;
+}
+
+
+
+
+@media(max-width: 320px) {
+
+    #first {
+        margin-top: 15%;
+    }
+
+    .article {
+        margin-top: 5%;
+    }
+    
+}
+
+
+@media(min-width: 768px) {
+
+    #first {
+        margin-top: 8%;
+    }
+    
+    .article {
+        height: 400px;
+        margin-top: 2%;
+    }
+
+    .article h2 {
+        font-size: 1.5em;
+    }
+  
+}
+
+
+@media(min-width: 1024px) {
+
+    .article h2 {
+        font-size: 2em;
+    }
+}
+
+@media(min-width: 1200px) {
+
+    body {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #first {
+        margin-top: 0;
+    }
+
+
+    .article {
+        height: 500px;
+        margin-top: 0%;
+    }
+
+    .article h2 {
+        font-size: 1.7em;
+    }
+
+ 
+}
