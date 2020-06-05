@@ -23,12 +23,32 @@ a {
                 0 0 40px orange;
 }
 
+.arrows img {
+    width: 20px;
+    height: auto;
+}
+
+#back {
+    bottom: 5px;
+    left: 5px;
+    position: absolute;
+}
+
+#forward {
+    bottom: 5px;
+    right: 5px;
+    position: absolute;
+}
 
 @media(min-width: 768px) {
 
     .button {
         padding: 15px 30px;
         font-size: 1em;
+    }
+
+    .arrows img {
+        width: 30px;
     }
 
   
@@ -52,5 +72,19 @@ a {
 
     .button.learn {
         
+    }
+
+    .arrows {
+        width: 50px;
+    }
+
+    #back {
+        bottom: 10px;
+        left: 10px;
+    }
+
+    #forward {
+        bottom: 10px;
+        right: 10px;
     }
 }

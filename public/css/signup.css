@@ -44,7 +44,7 @@ body {
     justify-content: center;
     align-items: center;
     display: flex;
-    margin-top: 5%;
+    margin-top: 9%;
     flex-direction: column;
     grid-auto-columns: auto;
 }
@@ -124,6 +124,10 @@ h1 {
         background-size: cover;
     }
 
+    .main-content .field {
+        margin-top: 6%;
+    }
+
     .main-content #radios {
         width: 30%;
         margin: 0 auto;
@@ -178,12 +182,20 @@ h1 {
     }
 
     
+    
 
     .main-content #radios {
         width: 25%;
         margin: 0 auto;
         margin-top: 15px;
     }    
+
+
+    .main-content .field input[type='submit'] {
+        text-indent: 0%;
+        height: 40px;
+        width: 120px;
+    }
 
 
 

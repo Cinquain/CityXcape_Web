@@ -21,6 +21,9 @@ body {
     background-repeat: no-repeat;
 }
 
+ #first {
+    margin-top: 7%;
+}
 
  .article {
     width: 90%;
@@ -30,7 +33,7 @@ body {
     align-items: center;
     flex-direction: column;
     grid-auto-columns: auto;
-    margin-top: 6%;
+    margin-top: 2%;
     color: white;
 }
 
@@ -42,7 +45,7 @@ body {
 .article a {
     height: 65%;
     width: 65%;
-    margin: 2%;
+    margin-bottom: 2%;
 }
 
 .article img {
