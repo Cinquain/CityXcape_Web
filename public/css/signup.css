@@ -88,8 +88,11 @@ body {
 .main-content .field input[type='submit'] {
     text-indent: 0%;
     height: 40px;
-    width: 120px;
-    border: 1px solid white;
+    width: 110px;
+    background: white;
+    color: black;
+    font-weight: bold;
+    border-radius: 4px;
 }
 
 .main-content .field input[type='submit']:hover {
@@ -139,10 +142,8 @@ h1 {
     .main-content .field input[type='submit'] {
         text-indent: 0%;
         height: 50px;
-        width: 180px;
+        width: 160px;
     }
-
- 
    
     
 }
