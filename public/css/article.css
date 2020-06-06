@@ -10,7 +10,7 @@
 }
 
 body {
-    height: 100vh;
+    height: auto;
     width: 100vw;
     background: black;
     color: white;
@@ -39,12 +39,13 @@ body {
 .image-box {
  width: 90%;
  height: auto;
- margin: 2% 0;
+ margin: 2%;
  display: flex;
  justify-content: center;
  align-items: center;
  flex-direction: column;
  grid-auto-columns: auto;
+ position: relative;
 }
 
 .image-box img {
