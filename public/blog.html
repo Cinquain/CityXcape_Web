@@ -2,18 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta property="og:image" content="./assets/blog-thumbnail.jpg"/>
     <link rel="shortcut icon" href="./assets/favicon.png">
     <link rel="stylesheet" text="text/css" href="/css/logo.css">
     <link rel="stylesheet" text="text/css" href="/css/button.css"> 
     <link rel="stylesheet" text="text/css" href="/css/menu.css">   
-    <link rel="stylesheet" text="text/css" href="/css/blog.css">    
+    <link rel="stylesheet" text="text/css" href="/css/blog.css">  
+    <link rel="stylesheet" text="text/css" href="/css/swiper.min.css">      
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
     <title>Street Talk, CityXcape's Official Blog</title>
 </head>
 <body>
+
 
      <!-- Nav ID -->
      <div class="logo">
@@ -43,50 +45,105 @@
         </div>
         <!--End of Sandwich Menu-->
 
-       
-            <div class="article" id="first">
 
-                <a href="/articles/america_need_scouts.html">
-                    <img src="/assets/blog/thumbnails/Scouts_thumb.jpg" alt="American Scout">
-                </a>
+         <!-- Swiper -->
+  <div class="swiper-container">
+        <div class="swiper-wrapper">
 
-                <h2>
-                   America Need Scouts
-                </h2>
+            <div class="swiper-slide">
+                    <div class="image-box" id="first">
+                            <a href="">
+                                <img src="/assets/blog/thumbnails/looking.jpg" alt="Urban Explorers">
+                            </a>
+                    </div>
 
+                    <div class="details">
+                        <h3>Looking for Explorers</h3>
+                    </div>
             </div>
 
-            <div class="article">
+            <div class="swiper-slide">
+                    <div class="image-box" id="first">
+                        <a href="/articles/america_need_scouts.html">
+                            <img src="/assets/blog/thumbnails/Scouts_thumb.jpg" alt="American Scout">
+                        </a>
+                    </div>
 
-                <a href="">
-                    <img src="/assets/blog/thumbnails/Find Abandoned Places.jpg" alt="Find Abandoned Placed">
-                </a>
-
-                <h2>
-                    Find Abandoned Places
-                </h2>
-
+                    <div class="details">
+                        <h3>America Need Scouts</h3>
+                    </div>
             </div>
 
-            <div class="article">
+                <div class="swiper-slide">
+                        <div class="image-box" id="first">
+                            <a href="">
+                                <img src="/assets/blog/thumbnails/Find Abandoned Places.jpg" alt="Find Abandoned Placed">
+                            </a>
+                        </div>
+    
+                        <div class="details">
+                            <h3>Find Abandoned Places</h3>
+                        </div>
+                </div>
+    
+
+            <!-- Add Pagination -->
+        </div>
+        <div class="swiper-pagination"></div>
+  </div>
+            <!-- <div class="swiper-slide">
+                    <div class="article">
+                       
+                        <h2>
+                            Find Abandoned Places
+                        </h2>
+                    </div>
+            </div>
+
+            <div class="swiper-slide">
+                    <div class="article">
                 
-                <a href="">
-                    <img src="/assets/blog/thumbnails/looking.jpg" alt="">
-                </a>
-
-                <h2>
-                    Looking for Explorers
-                </h2>
-
+                        <a href="">
+                            <img src="/assets/blog/thumbnails/looking.jpg" alt="">
+                        </a>
+        
+                        <h2>
+                            Looking for Explorers
+                        </h2>
+        
+                    </div>
             </div>
-
+        </div> -->
+        
             <!-- <a href="#" class="arrows" id="back">
                 <img src="/assets/Back.png" alt="back">
             </a> -->
-
+<!-- 
             <a href="#" class="arrows" id="forward">
                 <img src="/assets/Forward.png" alt="next">
-            </a>
+            </a> -->
+
+            <script type="text/javascript" src="/script/swiper.min.js"></script>
+
+
+            <script>
+                    var swiper = new Swiper('.swiper-container', {
+                      effect: 'coverflow',
+                      grabCursor: true,
+                      centeredSlides: true,
+                      slidesPerView: 'auto',
+                      coverflowEffect: {
+                        rotate: 50,
+                        stretch: 0,
+                        depth: 200,
+                        modifier: 1,
+                        slideShadows : true,
+                      },
+                      pagination: {
+                        el: '.swiper-pagination',
+                      },
+                    });
+                  </script>
 
     
 </body>

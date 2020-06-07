@@ -8,6 +8,7 @@ a {
     border-radius: 5px;
     margin: 8px;
     color: white;
+    transition: 0.3s;
 }
 
 .button.learn {
@@ -15,6 +16,7 @@ a {
    background: rgba(101,67,33, 0.5);
    font-size: 0.8em;
    margin: 10px;
+   transition: 0.3s;
 }
 
 .button.learn:hover {

@@ -93,6 +93,7 @@ body {
     color: black;
     font-weight: bold;
     border-radius: 4px;
+    transition: 0.3s;
 }
 
 .main-content .field input[type='submit']:hover {
@@ -180,9 +181,6 @@ h1 {
         align-items: center;
         display: flex;
     }
-
-    
-    
 
     .main-content #radios {
         width: 25%;
