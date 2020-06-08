@@ -47,6 +47,7 @@ body {
     margin-top: 9%;
     flex-direction: column;
     grid-auto-columns: auto;
+    padding: 2px;
 }
 
 .main-content .input-field {
