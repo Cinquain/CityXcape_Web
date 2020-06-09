@@ -19,6 +19,15 @@ a {
    transition: 0.3s;
 }
 
+.button:hover {
+    border: none;
+    color: black;
+    background: orange;
+    box-shadow: 0 0 10px orange,
+    0 0 20px black,
+    0 0 40px orange;
+}
+
 .button.learn:hover {
     box-shadow: 0 0 10px orange,
                 0 0 20px black,
