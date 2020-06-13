@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
-const request = require('superagent')
 const mysql = require('mysql')
 
 
@@ -35,51 +34,49 @@ app.get('/', (req, res) => {
 
 app.post('/signup', (req, res, err) => {
 
-    var name = req.body.fname
+    var first_name = req.body.fname
+    var last_name = req.body.lname
     var email = req.body.email
     var city = req.body.city 
     var device = req.body.device
+    console.log(first_name, last_name, email, city, device)
+    saveToMailchimp(first_name, last_name, email, city, device)
+    res.redirect('success.html')
 
-    console.log(name, email, city, device)
-    saveToMailchimp(name, email, city, device)
+    if (err) {
+        console.log('error saving user')
+    }
 })
 
-function saveToMailchimp(name, email, city, device) {
+function saveToMailchimp(fname, lname, email, city, device) {
 
-    var request = require('request');
 
-    const data = {
-        members: [
-            {
-                email_address: email,
-                status: 'subscribed',
-                merged_fields: {
-                    FNAME: name,
-                    TEXTYUI_3: city, 
-                    CHECKBOXY: device
-                }
-            }
-        ]
-    }
+    var request = require("request")
 
-    const postData = JSON.stringify(data)
+    var options = { method: 'POST',
+    url: 'https://us7.api.mailchimp.com/3.0/lists/cc06da0dc6/members',
+    headers: 
+    { 'cache-control': 'no-cache',
+        Connection: 'keep-alive',
+        Host: 'us7.api.mailchimp.com',
+        'Cache-Control': 'no-cache',
+        Accept: '*/*',
+        Authorization: process.env.MAILCHIMP_AUTHORIZATION,
+        'Content-Type': 'application/json' },
+    body: 
+    { email_address: email,
+        status: 'subscribed',
+        merge_fields: 
+        { FNAME: fname,
+            LNAME: lname,
+            TEXTYUI_3: city,
+            CHECKBOXY: device } },
+    json: true };
 
-    const options = {
-        url: 'https://us7.api.mailchimp.com/3.0/lists/cc06da0dc6',
-        method: 'POST',
-        headers: { 
-            Authorization: 'auth 2d49af1f4e73a69ab208d07a27b5c768-us7'
-        },
-        body: postData 
-    };
+    request(options, function (error, response, body) {
 
-    request(options, function(err, response, body) {
-        if (err) {
-            console.log('Error saving to mailchimp')
-        } else if (response.statusCode === 200) {
-            console.log('Saved to Mailchimp')
-        }
+    if (error) throw new Error(error);
+    console.log(body);
     });
-
 
 }

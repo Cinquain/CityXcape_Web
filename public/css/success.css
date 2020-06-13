@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
+
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(/assets/iPhone\ success.png);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    flex-direction: column;
+    grid-auto-columns: auto;
+}
+
+.title {
+    margin: 20px;
+}
+
+
+@media(min-width: 768px) {
+
+    body {
+        background: url(/assets/iPad\ Success.png);
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+@media(min-width:1024px) {
+
+}
+
+
+@media(min-width: 1200px) {
+    body {
+        background: url(/assets/success.png);
+        background-size: cover;
+        background-position: center;
+    }
+}
