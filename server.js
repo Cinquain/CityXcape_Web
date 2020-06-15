@@ -28,7 +28,7 @@ const pool = mysql.createConnection({
     database: ''
 });
 
-router.post('/singup', (req, res, err) =>{
+router.post('/signup', (req, res, err) =>{
     var first_name = req.body.fname
     var last_name = req.body.lname
     var email = req.body.email
