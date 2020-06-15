@@ -3,7 +3,8 @@ const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const mysql = require('mysql')
-
+const serverless = require('serverless-http');
+const router = express.Router();
 
 const Port = process.env.Port || 8000 
 
@@ -12,8 +13,8 @@ require('dotenv').config();
 app.use(morgan('short'));
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static('public'));
-app.use(express.json())
-
+app.use(express.json());
+app.use('/.netlify/functions/server',router);
 
 app.listen(Port, () => {
     console.log('Server is up and running')
@@ -26,6 +27,21 @@ const pool = mysql.createConnection({
     password: '',
     database: ''
 });
+
+router.post('/singup', (req, res, err) =>{
+    var first_name = req.body.fname
+    var last_name = req.body.lname
+    var email = req.body.email
+    var city = req.body.city 
+    var device = req.body.device
+    console.log(first_name, last_name, email, city, device)
+    saveToMailchimp(first_name, last_name, email, city, device)
+    res.redirect('success.html')
+
+    if (err) {
+        console.log('error saving user')
+    }
+})
 
 
 app.get('/', (req, res) => {
@@ -80,3 +96,5 @@ function saveToMailchimp(fname, lname, email, city, device) {
     });
 
 }
+
+module.exports.handler = serverless(app)

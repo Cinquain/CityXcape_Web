@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "./node_modules/.bin/netlify-lamdba serve server.js"
   },
   "author": "James Allan",
   "license": "ISC",
@@ -15,8 +15,10 @@
     "express": "^4.17.1",
     "morgan": "^1.10.0",
     "mysql": "^2.18.1",
+    "netlify-lambda": "^1.6.3",
     "nodemon": "^2.0.4",
     "request": "^2.88.2",
+    "serverless-http": "^2.5.0",
     "superagent": "^5.2.2"
   }
 }
