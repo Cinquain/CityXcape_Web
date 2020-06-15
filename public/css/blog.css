@@ -110,6 +110,8 @@ body {
     height: 220px;
     border-radius: 50%;
     transition: 0.3s;
+    background-size: cover;
+    background-position: center;
   }
 
 
