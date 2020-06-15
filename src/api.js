@@ -27,7 +27,7 @@ router.post('/signup', (req, res, err) =>{
     var device = req.body.device
     console.log(first_name, last_name, email, city, device)
     saveToMailchimp(first_name, last_name, email, city, device)
-    res.redirect('success.html')
+    res.redirect('https://romantic-rosalind-bb4e9e.netlify.app/success.html')
 
     if (err) {
         console.log('error saving user')
