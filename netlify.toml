@@ -1,3 +1,6 @@
 [build]
 
     functions = "functions"
+
+    [context.branch-deploy.environment]
+    NODE_ENV = "development"
