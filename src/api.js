@@ -55,9 +55,7 @@ function saveToMailchimp(fname, lname, email, city, device) {
    request(options, function (error, response, body) {
    if (error) throw new Error(error);
    console.log(body);
-   res.redirect('https://romantic-rosalind-bb4e9e.netlify.app/success.html')
-
-
+   window.location.href = 'https://romantic-rosalind-bb4e9e.netlify.app/success.html'
    });
 
 }
