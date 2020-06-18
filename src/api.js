@@ -17,6 +17,7 @@ router.get('/', (req, res) => {
 })
 
 router.post('/signup', (req, res, err) =>{
+
    var first_name = req.body.fname
    var last_name = req.body.lname
    var email = req.body.email
