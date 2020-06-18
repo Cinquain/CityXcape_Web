@@ -24,9 +24,8 @@ router.post('/signup', (req, res, err) =>{
    var device = req.body.device
    console.log(first_name, last_name, email, city, device)
    saveToMailchimp(first_name, last_name, email, city, device)
-   res.redirect('https://romantic-rosalind-bb4e9e.netlify.app/success.html')
    if (err) {
-       console.log('error saving user')
+       console.log(err)
    }
 })
 
@@ -56,6 +55,8 @@ function saveToMailchimp(fname, lname, email, city, device) {
    request(options, function (error, response, body) {
    if (error) throw new Error(error);
    console.log(body);
+   res.redirect('https://romantic-rosalind-bb4e9e.netlify.app/success.html')
+
 
    });
 
