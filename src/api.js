@@ -23,13 +23,13 @@ router.post('/signup', (req, res, err) =>{
    var city = req.body.city
    var device = req.body.device
    console.log(first_name, last_name, email, city, device)
-   saveToMailchimp(first_name, last_name, email, city, device)
+   saveToMailchimp(first_name, last_name, email, city, device, res)
    if (err) {
        console.log(err)
    }
 })
 
-function saveToMailchimp(fname, lname, email, city, device) {
+function saveToMailchimp(fname, lname, email, city, device, res) {
 
    var request = require("request")
 
@@ -55,7 +55,7 @@ function saveToMailchimp(fname, lname, email, city, device) {
    request(options, function (error, response, body) {
    if (error) throw new Error(error);
    console.log(body);
-   window.location.href = 'https://romantic-rosalind-bb4e9e.netlify.app/success.html'
+   res.redirect('https://romantic-rosalind-bb4e9e.netlify.app/success.html')
    });
 
 }
