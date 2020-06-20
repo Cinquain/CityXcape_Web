@@ -49,15 +49,21 @@ body {
 }
 
 .image-box img {
-    width: 80%;
+    width: auto;
+    max-width: 80%;
     height: auto;
+    max-height: 500px;
+}
+
+.image-box p {
+    text-align: center;
 }
 
 .image-box h3 {
     letter-spacing: 1px;
     font-size: 1em;
     width: 80%;
-    text-align: justify;
+    text-align: center;
 }
 
 .image-box h1 {
