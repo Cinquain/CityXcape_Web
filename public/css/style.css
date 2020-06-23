@@ -37,7 +37,7 @@ section:nth-child(2) {
 }
 
 section:nth-child(3) {
-    background: url(/assets/iPhone\ Globe.png);
+    background: black;
     background-size: cover;
     background-position: center;
 }
@@ -95,7 +95,40 @@ section:nth-child(4) {
     color: #F49C4C;
 }
 
+.pulse {
+    width: 250px;
+    height: 250px;
+    background: url(/assets/earth.jpg);
+    background-size: cover;
+    border-radius: 50%;
+    z-index: 1;
+    cursor: pointer;
+    margin: 40px;
+    box-shadow: inset 0 0 80px rgba(255, 255, 255, 0.5);
+    animation: animateEarth 60s linear infinite;
+    transition: 0.5s;
+}
 
+.pulse:hover {
+    border: 0.5px solid gray;
+
+}
+
+
+@keyframes animateEarth {
+
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 3600px 0;
+    }
+    
+}
+
+
+/* Mobile Responsiveness */
 
 @media(min-width: 767px) {
  
@@ -110,7 +143,7 @@ section:nth-child(4) {
     }
 
     section:nth-child(3) {
-        background: url(/assets/iPad Globe.png);
+        background: black;
         background-position: center;
     }
 
@@ -139,6 +172,14 @@ section:nth-child(4) {
     #world {
         font-size: 2em;
     }
+
+
+    .pulse {
+        width: 450px;
+        height: 450px;
+    }
+    
+  
     
 }
 
@@ -165,6 +206,11 @@ section:nth-child(4) {
         font-size: 3em;
     }
     
+    .pulse {
+        width: 650px;
+        height: 650px;
+    }
+  
     
 }
 
@@ -185,7 +231,7 @@ section:nth-child(4) {
     }
 
     section:nth-child(3) {
-        background: url(/assets/Globe.png);
+        background: black;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -218,7 +264,13 @@ section:nth-child(4) {
     #world {
         font-size: 3.5em;
     }
+
+    .pulse {
+        width: 700px;
+        height: 700px;
+    }
     
+  
 
     /* #download img:hover {
         border: none;

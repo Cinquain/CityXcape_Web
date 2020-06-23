@@ -59,7 +59,7 @@
 
     <section>
         <div class="content">
-            <h1 id="secret">
+            <h1>
                 CityXcape shows <span id="secret-spot">Secret Spots</span> for a <span id="worlds">World</span> 
             </h1>
             <a class="button learn" href="/articles/what_are_secret_spots.html">
@@ -70,15 +70,21 @@
 
     <section>
         <div class="content">
+
             <h1 id="world">
-                Different Worlds, Different Secret Spots
+                Different <span id="secret-spot">Worlds</span>, Different <span id="worlds">Secret Spots</span> 
             </h1>
 
-            <a class="button learn" href="https://youtu.be/1dWO7t2w2eo">
-                Watch Video
-            </a>
+            <div class="pulse" id="globe">                
+            </div>
 
         </div>
+
+        <script type="text/javascript">
+            document.getElementById('globe').addEventListener('click', function() {
+                window.location = 'https://www.google.com/'
+            })
+        </script>
     </section>
 
     <section>
