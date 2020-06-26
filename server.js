@@ -6,6 +6,14 @@ const mysql = require('mysql')
 const serverless = require('serverless-http');
 const router = express.Router();
 
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config()
+}
+
+const stripeLiveKey = process.env.STRIPE_SECRET_KEY
+const stripeLiveTest = process.env.STRIPE_SECRET_TEST
+const stripe = require('stripe')(stripeLiveTest)
+
 const Port = process.env.Port || 8000 
 
 require('dotenv').config();
@@ -29,11 +37,38 @@ const pool = mysql.createConnection({
 });
 
 
-
-
 app.get('/', (req, res) => {
     res.render('index.html')
 })
+
+app.post('/purchase', (req, res) =>{
+    console.log('Purchase route hit')
+    var price = req.body.value
+    var items = req.body.items
+    var token = req.body.stripeTokenId
+    var description = ''
+    
+    for (var i = 0; i < items.length; i++) {
+        var item = items[i]
+        description += ` ${item.quantity} ${item.name}`
+    }
+
+    console.log(items, price, token, description)
+    stripe.charges.create({
+        amount: price,
+        source: token,
+        currency: 'usd',
+        description: description
+    }).then(function() {
+        console.log('charge successful')
+        res.json({ message: 'Successfully purchased items'})
+    }).catch(function(error) {
+        console.log('charge failed')
+        console.log(error)
+        res.status(500).end()
+    })
+})
+
 
 app.post('/signup', (req, res, err) => {
 

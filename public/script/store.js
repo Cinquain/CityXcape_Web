@@ -36,25 +36,62 @@ var stripeHandler = StripeCheckout.configure({
     image:'/assets/marketplace.png',
     locale: 'en',
     token: function(token) {
+        var items = []
+        var cartItemContainer = document.getElementsByClassName('cart-items')[0]
+        var cartrows = cartItemContainer.getElementsByClassName('cart-row')
+        for (var i = 0; i < cartrows.length; i++) {
+            var cartRow = cartrows[i];
+            var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
+            var quantiy = quantityElement.value
+            var title = cartRow.getElementsByClassName('cart-item-title')[0].innerText
+            items.push({
+                name: title,
+                quantity: quantiy
+            })
+        }
+        var priceElement = document.getElementsByClassName('cart-total-price')[0]
+        var price = parseFloat(priceElement.innerText.replace('$', '')) * 100
+        console.log(token, items)
+
+        fetch('/purchase', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                stripeTokenId: token.id,
+                items: items,
+                value: price,
+            })
+        }).then(function(res) {
+            return res.json()
+        }).then(function(data) {
+            alert(data.message)
+            var cartItems = document.getElementsByClassName('cart-items')[0]
+            while (cartItems.hasChildNodes()) {
+                cartItems.removeChild(cartItems.firstChild)
+            }
+            updateCartTotal()
+        }).catch(function(error) {
+            console.log(error)
+        })
 
     }
 })
 
 
 function purchasedClicked(event) {
-    // alert('Thank you for your purchase')
-    // var cartItems = document.getElementsByClassName('cart-items')[0]
 
-    // while (cartItems.hasChildNodes()) {
-    //     cartItems.removeChild(cartItems.firstChild)
-    // }
-    // updateCartTotal()
+    // alert('Thank you for your purchase')
+   
     var priceElement = document.getElementsByClassName('cart-total-price')[0]
     var price = parseFloat(priceElement.innerText.replace('$', '')) * 100
     stripeHandler.open({
         amount: price,
         description: 'CityXcape',
         shippingAddress: true,
+        billingAddress: true,
     })
 
 }

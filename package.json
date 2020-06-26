@@ -21,6 +21,7 @@
     "nodemon": "^2.0.4",
     "request": "^2.88.2",
     "serverless-http": "^2.5.0",
+    "stripe": "^8.67.0",
     "superagent": "^5.2.2"
   }
 }
