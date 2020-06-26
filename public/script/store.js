@@ -30,14 +30,33 @@ function ready() {
 } 
 // End of ready function
 
-function purchasedClicked(event) {
-    alert('Thank you for your purchase')
-    var cartItems = document.getElementsByClassName('cart-items')[0]
 
-    while (cartItems.hasChildNodes()) {
-        cartItems.removeChild(cartItems.firstChild)
+var stripeHandler = StripeCheckout.configure({
+    key: stripePublicKey,
+    image:'/assets/marketplace.png',
+    locale: 'en',
+    token: function(token) {
+
     }
-    updateCartTotal()
+})
+
+
+function purchasedClicked(event) {
+    // alert('Thank you for your purchase')
+    // var cartItems = document.getElementsByClassName('cart-items')[0]
+
+    // while (cartItems.hasChildNodes()) {
+    //     cartItems.removeChild(cartItems.firstChild)
+    // }
+    // updateCartTotal()
+    var priceElement = document.getElementsByClassName('cart-total-price')[0]
+    var price = parseFloat(priceElement.innerText.replace('$', '')) * 100
+    stripeHandler.open({
+        amount: price,
+        description: 'CityXcape',
+        shippingAddress: true,
+    })
+
 }
 
 function addToCartClicked(event) {
