@@ -6,6 +6,7 @@ const app = express();
 const router = express.Router()
 
 require('dotenv').config();
+app.use(express.json());
 
 
 const stripeLiveKey = process.env.STRIPE_SECRET_KEY
