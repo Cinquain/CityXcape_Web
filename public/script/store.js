@@ -53,7 +53,7 @@ var stripeHandler = StripeCheckout.configure({
         var price = parseFloat(priceElement.innerText.replace('$', '')) * 100
         console.log(token, items)
 
-        fetch('/purchase', {
+        fetch('/.netlify/functions/api/purchase', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
