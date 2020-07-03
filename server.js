@@ -12,7 +12,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 const stripeLiveKey = process.env.STRIPE_SECRET_KEY
 const stripeLiveTest = process.env.STRIPE_SECRET_TEST
-const stripe = require('stripe')(stripeLiveTest)
+const stripe = require('stripe')(stripeLiveKey)
 
 const Port = process.env.Port || 8000 
 

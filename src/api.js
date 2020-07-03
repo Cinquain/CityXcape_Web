@@ -11,7 +11,7 @@ app.use(express.json());
 
 const stripeLiveKey = process.env.STRIPE_SECRET_KEY
 const stripeLiveTest = process.env.STRIPE_SECRET_TEST
-const stripe = require('stripe')(stripeLiveTest)
+const stripe = require('stripe')(stripeLiveKey)
 
 app.use(bodyParser.urlencoded({extended:false}));
 
