@@ -21,7 +21,8 @@ body {
     align-items: center;
 }
 
-.main-content {
+
+ .main-content {
     width: 92%;
     height: 75%;
     display: flex;

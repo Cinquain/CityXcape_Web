@@ -14,6 +14,7 @@ body {
 section {
     height: 100vh;
     width: 100vw;
+    background: black;
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
@@ -21,41 +22,77 @@ section {
     justify-content: center;
     align-items: center;
     align-content: center;
+}
+
+section span {
+    position: absolute;
+    background: url(/assets/dot.png);
+    background-size: cover;
+    border-radius: 50%;
+    bottom: -50px;
+    animation: rainingDots 4s linear infinite
+}
+
+
+@keyframes rainingDots {
+
+    0% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+    
+
+    100% {
+        transform: translateY(-2000%);
+        opacity: 0;
+    }
+
+}
+
+.content #logo {
+    width: 250px;
+    height: auto;
+}
+
+.main-button img {
+    width: 100px;
+    height: auto;
+}
+
+#product {
+    display: none;
+}
+
+.row {
+    position: relative;
+}
+
+
+
+.founders .row {
     color: white;
-}
-
-section:nth-child(1) {
-    background: url(/assets/iPhone\ Abandoned.jpg);
-    background-size: cover;
-    background-position: center;
-}
-
-section:nth-child(2) {
-    background: url(/assets/iPhone\ Pin.png);
-    background-position: center;
-    background-size: cover;
-}
-
-section:nth-child(3) {
-    background: black;
-    background-size: cover;
-    background-position: center;
-}
-
-section:nth-child(4) {
-    background: url(/assets/iPhone\ Future.png);
-    background-size: cover;
-    background-position: center;
-    overflow: hidden;
-}
-
-.content {
     display: flex;
     flex-direction: column;
-    grid-auto-columns: auto;
     justify-content: center;
     align-items: center;
-    color: white;
+    margin: 50px;
+}
+
+
+.founders .row img {
+    width: 150px;
+    height: auto;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .content #main {
@@ -63,9 +100,10 @@ section:nth-child(4) {
     height: auto;
 }
 
-.content h1 {
+.content p {
     font-family: 'Lato', sans-serif;
     font-size: 1.3em;
+    color: white;
 }
 
 .content .title {
@@ -131,26 +169,7 @@ section:nth-child(4) {
 /* Mobile Responsiveness */
 
 @media(min-width: 767px) {
- 
-    section:nth-child(1) {
-        background: url(/assets/iPad Abandoned.jpg));
-        background-position: center;
-    }
 
-    section:nth-child(2) {
-        background: url(/assets/iPad Pin.png);
-        background-position: center;
-    }
-
-    section:nth-child(3) {
-        background: black;
-        background-position: center;
-    }
-
-    section:nth-child(4) {
-        background: url(/assets/ipad future.png);
-        background-position: center;
-    }
     
     .content #main {
         width: 450px;
@@ -190,6 +209,7 @@ section:nth-child(4) {
         height: auto;
     }
 
+
     .content h1 {
         font-size: 3em;
     }
@@ -216,36 +236,108 @@ section:nth-child(4) {
 
 
 @media(min-width: 1200px) {
-    section:nth-child(1) {
-        background: url(/assets/Abandoned.jpg);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+
+
+    .content {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        max-width: 1500px;
+        justify-content: space-between;
     }
 
-    section:nth-child(2) {
-        background: url(/assets/Secrets.png);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+    .content #logo {
+        height: auto;
+        width: 600px;
     }
 
-    section:nth-child(3) {
-        background: black;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+    .content #product {
+        height: 1100px;
+        width: auto;
+        float: right;
+        display: initial;
     }
 
-    section:nth-child(4) {
-        background: url(/assets/cityxcape-future.png), black;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+    .info {
+        margin-right: 20px;
     }
 
+    .founders {
+        width: 100%;
+        max-width: 1500px;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .founders .row img {
+        min-width: 600px;
+        max-width: 40%;
+        height: auto;
+    }
+    
+
+
+    .content p {
+        font-size: 2em;
+    }
+
+    .content p .subtitle {
+        margin-top: -18px;
+        font-size: 1em;
+        font-weight: 200;
+        position: relative;
+    }
+
+    .content .main-button img {
+        width: 200px;
+        height: auto;
+    }
+
+    .content .main-button:hover {
+        box-shadow: 0 0 10px white, 
+                    0 0 20px black,
+                    0 0 40px white;
+    }
+
+    .content #android {
+        margin-top: -20px;
+        text-decoration: none;
+        color: #00C4EE;
+    }
+
+    .row {
+        margin-right: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+
+    .row a img {
+    }
+
+    .row a img:hover {
+        border-radius: 50%;
+        box-shadow: 0 0 20px orange,
+                    0 0 30px black,
+                    0 0 40px orange;
+
+    }
+
+    .row p {
+        margin: 20px;
+        font-size: 2em;
+    }
+
+
+  
     .content #main {
-        width: 700px;
+        width: 100%;
         height: auto;
     }
 

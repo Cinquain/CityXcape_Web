@@ -11,6 +11,7 @@
     <link rel="stylesheet" text="text/css" href="/css/logo.css">
     <link rel="stylesheet" text="text/css" href="/css/button.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>CityXcape, Find Secret Spots</title>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -74,57 +75,76 @@
         <!--End of Sandwich Menu-->
 
         <div class="content">
-                <img id='main' src="./assets/Logo.png" alt="CityXcape Logo">
-                <h1 class="title">
-                    Find Secret Spots
-                </h1>
-                <a class='download' href="https://www.cityxcape.com/signup.html">
-                    <img src="./assets/download.png" alt="download CityXcape">
+
+            <div  data-aos-easing="ease-in-out"   class="info">
+
+                <img id="logo" src="/assets/Logo.png" alt="cityXcape logo">
+                <p>Discover New Places</p>
+
+                <a class="main-button" href="/signup.html">
+                    <img src="/assets/download.png" alt="download app">
                 </a>
+
+                <a id="android" href="/signup.html">
+                   Join Android List
+                </a>
+
+            </div>
+
+              
+            <img id="product" src="/assets/product.png" alt="cityXcape app">
               
         </div>
 
     </section>
 
-    <section>
-        <div class="content">
-            <h1>
-                Find <span id="secret-spot">Secret Spots</span> for a <span id="worlds">World</span> 
-            </h1>
-            <a class="button learn" href="/articles/what_are_secret_spots.html">
-                Learn More
-            </a>
-        </div>
-    </section>
 
     <section>
-        <div class="content">
 
-            <h1 id="world">
-                Different <span id="secret-spot">Worlds</span>, Different <span id="worlds">Secret Spots</span> 
-            </h1>
+        <div class="founders">
 
-            <div class="pulse" id="globe">                
+            <div data-aos="fade-up" class="row">
+
+                <a href="https://www.linkedin.com/in/wwolff/?originalSubdomain=de">
+                    <img src="/assets/William.png" alt="William Wolff">
+                </a>
+                <p>
+                    William Wolff
+                </p>
+                <p class="subtitle">
+                    Co-Founder & CTO
+                </p>
+
             </div>
 
-        </div>
+            <div data-aos="fade-up"   class="row">
 
-        <script type="text/javascript">
-            document.getElementById('globe').addEventListener('click', function() {
-                window.location = 'https://www.youtube.com/watch?v=9i4W842lwHI'
-            })
-        </script>
-    </section>
+                <a href="https://www.linkedin.com/in/james-allan-a79897b2/">
+                    <img src="/assets/James.png" alt="James Allan">
+                </a>
 
-    <section>
-        <div class="content">
-            <h1 class="title">
-                Start Exploring
-            </h1>
-            <a class='download' href="https://www.cityxcape.com/signup.html">
-                <img src="./assets/download.png" alt="download CityXcape">
-            </a>
+                <p>
+                    James Allan
+                </p>
+                <p class="subtitle">
+                    Co-Founder & CEO
+                </p>
+
+            </div>
         </div>
     </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/script/main.js"> </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script>
+
+        AOS.init({
+            delay: 700,
+            duration: 2000,
+            mirror: true,
+        });
+
+      </script>
 </body>
 </html>
