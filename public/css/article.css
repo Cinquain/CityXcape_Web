@@ -59,6 +59,10 @@ body {
     text-align: center;
 }
 
+ul {
+    position: 0% auto;
+}
+
 .image-box h3 {
     letter-spacing: 1px;
     font-size: 1em;
