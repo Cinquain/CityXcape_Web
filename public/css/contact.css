@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+
+body {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    font-family: 'Lato', sans-serif;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),url(/assets/iPhone\ About.png);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    grid-auto-columns: auto;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5em;
+   
+}
+.button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    margin-bottom: 40px;
+}
+
+
+.button img {
+    height: 80px;
+    width: auto;
+    padding-right: 8px;
+}
