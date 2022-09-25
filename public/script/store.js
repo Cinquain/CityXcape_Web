@@ -26,7 +26,11 @@ function ready() {
     }
 
     document.getElementsByClassName('button-purchase')[0].addEventListener('click', purchasedClicked)
-
+    var sizebuttons = document.getElementsByClassName('shirt-size')
+    for (var i = 0; i < sizebuttons.length; i++) {
+        var button = sizebuttons[i]
+        button.addEventListener('click', selectSize)
+    }
 } 
 // End of ready function
 
@@ -168,3 +172,36 @@ function updateCartTotal() {
     total = Math.round(total * 100) / 100
     document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
 }
+
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+  
+  // Close the dropdown menu if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+
+  function selectSize(event) {
+    var button = event.target
+    let size = button.id;
+    let classNames = document.getElementsByClassName('shop-item-title');
+     classNames[1].textContent = size + ' Scout T-Shirt '
+  }
+
+  function addMediumShirt(event) {
+    console.log('printing medium')
+    let button = event.target
+    console.log(button.id)
+    let classNames = document.getElementsByClassName('shop-item-title');
+     classNames[1].textContent = 'Medium Scout T-Shirt '
+  }
