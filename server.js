@@ -4,7 +4,7 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const mysql = require('mysql')
 const serverless = require('serverless-http');
-const router = express.Router();
+const nodemailer = require('nodemailer')
 
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config()
@@ -84,6 +84,40 @@ app.post('/signup', (req, res, err) => {
     if (err) {
         console.log('error saving user')
     }
+})
+
+
+app.post('/business', (req, res, err) => {
+    console.log('hitting business endpoint')
+    var firstName = req.body.name
+    var store = req.body.storename
+    var mobile = req.body.mobile
+    var email = req.body.email
+    var message = req.body.message
+    console.log(firstName, store, mobile, email, message)
+
+    var transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          user: 'planetcpr@gmail.com',
+          pass: 'cisoqpwkjiqikxri'
+        }
+    })
+
+    var mailOptions = {
+        from: 'planetcpr@gmail.com',
+        to: 'info@cityXcape.com',
+        subject: 'Coverage Request from ' + store,
+        text: 'Email: ' + email + '\nPhone: ' + mobile + '\nMessage: ' + message
+    }
+
+    transporter.sendMail(mailOptions, function(error, info) {
+        if (error) {
+            console.log(error)
+        } else {
+            console.log('Email sent: ' + info.response)
+        }
+    })
 })
 
 function saveToMailchimp(fname, lname, email, city, device) {

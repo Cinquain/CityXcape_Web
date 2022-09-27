@@ -198,10 +198,3 @@ function myFunction() {
      classNames[1].textContent = size + ' Scout T-Shirt '
   }
 
-  function addMediumShirt(event) {
-    console.log('printing medium')
-    let button = event.target
-    console.log(button.id)
-    let classNames = document.getElementsByClassName('shop-item-title');
-     classNames[1].textContent = 'Medium Scout T-Shirt '
-  }
