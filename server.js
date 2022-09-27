@@ -116,6 +116,7 @@ app.post('/business', (req, res, err) => {
             console.log(error)
         } else {
             console.log('Email sent: ' + info.response)
+            res.redirect('success.html')
         }
     })
 })
