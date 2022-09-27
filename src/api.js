@@ -53,7 +53,7 @@ router.post('/business', (req, res, err) => {
             console.log(error)
         } else {
             console.log('Email sent: ' + info.response)
-            res.redirect('success.html')
+            res.redirect('https://www.cityxcape.com/success.html')
         }
     })
 })
@@ -128,7 +128,7 @@ function saveToMailchimp(fname, lname, email, city, device, res) {
    request(options, function (error, response, body) {
    if (error) throw new Error(error);
    console.log(body);
-   res.redirect('https://romantic-rosalind-bb4e9e.netlify.app/success.html')
+   res.redirect('https://www.cityxcape.com/success.html')
    });
 
 }
