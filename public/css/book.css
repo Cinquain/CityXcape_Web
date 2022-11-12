@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background: black;
+}
+
+
+section {
+    height: 100vh;
+    width: 100vw;
+    background: black;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+section span {
+    position: absolute;
+    background: url(/assets/dot.png);
+    background-size: cover;
+    border-radius: 50%;
+    bottom: -50px;
+    animation: rainingDots 4s linear infinite
+}
+
+
+@keyframes rainingDots {
+
+    0% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+    
+
+    100% {
+        transform: translateY(-2000%);
+        opacity: 0;
+    }
+
+}
+
+.content {
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.content .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding-right: 50px;
+}
+.content .info h1 {
+    font-weight: 700;
+    font-size: 30px;
+}
+.content p {
+    font-size: large;
+}
+
+#product {
+    height: 800px;
+    width: auto;
+}
+
+.button-purchase {
+    margin: 30px auto 80px auto;
+    font-size: 1.1em;
+    background: transparent;
+    border: 1px solid lightblue;
+    color: lightblue;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.button-purchase:hover {
+    box-shadow: 0 0 10px lightblue,
+                0 0 20px black,
+                0 0 40px lightblue;;
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+}

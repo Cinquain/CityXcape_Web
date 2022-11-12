@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <meta property="og:image" content="./assets/book thumb.png"/>
+            <link rel="shortcut icon" href="./assets/favicon.png">
+            <link rel="stylesheet" text="text/css" href="/css/book.css">
+            <link rel="stylesheet" text="text/css" href="/css/menu.css">
+            <link rel="stylesheet" text="text/css" href="/css/logo.css">
+            <link rel="stylesheet" text="text/css" href="/css/button.css">
+            <script src="https://checkout.stripe.com/checkout.js" defer></script>
+            <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+            <title>The Twelve Elements of Community</title>
+
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125997058-2"></script>
+            <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-125997058-2');
+            </script>
+
+            <!-- Facebook Pixel Code -->
+            <script>
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '236874703660753');
+            fbq('track', 'PageView');
+            </script>
+            <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=236874703660753&ev=PageView&noscript=1"
+            /></noscript>
+            <!-- End Facebook Pixel Code -->
+        </head>
+        <body>
+
+                    <!--Start of Sandwich Menu-->
+            <section>
+
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="./assets/Logo.png" alt="CityXcape Logo">
+                    </a>
+                </div>
+
+                <div class="menu-container">
+                    <input type="checkbox" class="toggler">
+                    <div class="hamburger">
+                        <div></div>
+                    </div>
+                    <div class="menu">
+                        <div>
+                            <div>
+                                <ul>
+                                    <li> <a href="index.html">Home</a></li>
+                                    <li> <a href="story.html">Our Story</a></li>
+                                    <li> <a href="signup.html">Android List</a></li>
+                                    <li> <a href="blog.html">Blog</a></li>
+                                    <li> <a href="store.html">Store</a></li>
+                                    <li> <a href="business.html">Business</a></li>
+                                    <li> <a href="book.html">Book</a></li>
+                                    <li> <a href="contact.html">Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content">
+
+                    <div class="info">
+                        <h1>A Guide for Community Building</h1>
+                        <p>Pre-order Your Copy</p>
+                        <form action="/.netlify/functions/api/book_purchase" method="POST">
+                            <script
+                              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                              data-key="pk_live_A8d4lLvezClH2wRaSJCT5jpF"
+                              data-image="/assets/marketplace.png"
+                              data-name="12 Elements of Community"
+                              data-description="By James Allan"
+                              data-amount="2500"
+                              data-label="Purchase">
+
+                              
+                            </script>
+                            
+                            <script>
+                                document.getElementsByClassName('stripe-button-el')[0].style.display = 'none'
+                            </script>
+                
+                            <button class="button-purchase">Purchase</button>
+                        </form>
+                    </div>
+
+                    <img id="product" src="/assets/Book.png" alt="community book">
+
+                </div>
+
+                    
+            </section>
+
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script type="text/javascript" src="/script/main.js"> </script>
+            <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+            <script>
+        
+                AOS.init({
+                    delay: 700,
+                    duration: 2000,
+                    mirror: true,
+                });
+        
+            </script>
+        </body>
+    </html>
