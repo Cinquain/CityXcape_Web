@@ -104,4 +104,8 @@ section span {
         margin-top: 20%;
         flex-direction: column;
     }
+
+    .logo {
+        display: none;
+    }
 }
