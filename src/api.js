@@ -87,6 +87,23 @@ router.post('/purchase', (req, res) =>{
     })
 })
 
+router.post('/book_purchase', (req, res) => {
+    const amount = 2500
+    
+    stripe.customers.create({
+        email: req.body.stripeEmail,
+        source: req.body.stripeToken
+    })
+    .then(customer => stripe.charges.create({
+        amount: amount, 
+        description: 'The 12 Element of Community',
+        currency: 'usd',
+        customer: customer.id 
+    }))
+    .then(charge => res.redirect('success.html'));
+});
+
+
 
 router.post('/signup', (req, res, err) =>{
 
