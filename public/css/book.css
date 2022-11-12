@@ -105,6 +105,14 @@ section span {
         flex-direction: column;
     }
 
+    .content .info {
+        padding-right: 20px;
+    }
+
+    .content .info h1 {
+        display: none;
+    }
+
     .logo {
         display: none;
     }
