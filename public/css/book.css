@@ -101,7 +101,7 @@ section span {
 
 @media (max-width: 768px) {
     .content {
-        margin-top: 10%;
+        margin-top: 20%;
         flex-direction: column;
     }
 }
