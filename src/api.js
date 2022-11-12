@@ -100,7 +100,7 @@ router.post('/book_purchase', (req, res) => {
         currency: 'usd',
         customer: customer.id 
     }))
-    .then(charge => res.redirect('success.html'));
+    .then(charge => res.redirect('https://www.cityxcape.com/success.html'));
 });
 
 
