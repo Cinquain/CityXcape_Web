@@ -81,6 +81,7 @@ section span {
 #product {
     height: 800px;
     width: auto;
+    z-index: 1000;
 }
 
 .button-purchase {
