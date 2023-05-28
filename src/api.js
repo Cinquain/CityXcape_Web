@@ -58,6 +58,40 @@ router.post('/business', (req, res, err) => {
     })
 })
 
+router.post('/experience', (req, res, err) => {
+    console.log('hitting tour guide endpoint')
+    var firstName = req.body.name
+    var store = req.body.storename
+    var mobile = req.body.mobile
+    var email = req.body.email
+    var message = req.body.message
+    console.log(firstName, store, mobile, email, message)
+
+    var transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          user: 'planetcpr@gmail.com',
+          pass: 'cisoqpwkjiqikxri'
+        }
+    })
+
+    var mailOptions = {
+        from: 'planetcpr@gmail.com',
+        to: 'info@cityXcape.com',
+        subject: 'Coverage Request from ' + store,
+        text: 'Email: ' + email + '\nPhone: ' + mobile + '\nMessage: ' + message
+    }
+
+    transporter.sendMail(mailOptions, function(error, info) {
+        if (error) {
+            console.log(error)
+        } else {
+            console.log('Email sent: ' + info.response)
+            res.redirect('https://www.cityxcape.com/success.html')
+        }
+    })
+})
+
 
 router.post('/purchase', (req, res) =>{
     console.log('Purchase route hit')

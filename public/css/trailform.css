@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 1, 2)
+      ), url(/assets/travel.jpg);
+      overflow: hidden;
+      background-size: cover;
+      height: 100vh;
+      width: 100vw;
+}
+
+section {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+   flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid white;
+    border-radius: 10px;
+    z-index: inherit;
+    background-color:black ;
+    color: white;
+    width: 80%;
+    height: 50%;
+}
+
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid white;
+}
+
+.modal-header .title {
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+.modal-header .close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25em;
+    font-weight: bold;
+    color: white;
+}
+
+section .grid .box-item h2  {
+    color: white;
+    font-weight: bold;
+}
+.modal-body {
+    padding: 10px 15px;
+}
+
+#overlay {
+    position: fixed;
+    opacity: 0;
+    top: 0%;
+    left: 0;
+    right: 0%;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    transition: 200ms ease-in-out;
+}
+
+#overlay.active {
+    pointer-events: all;
+    opacity: 1;
+}
+section .grid .box-item {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+}
+
+section .grid .box-item img {
+    height: 250px;
+    width: auto;
+    position: relative;
+    border-radius: 5%;
+}
+
+section .grid .box-item a:hover {
+    transition: 1s linear;
+}
+
+section .grid .box-item a:hover {
+    box-shadow: 0 0 5px #03e9f4,
+    0 0 25px #03e9f4,
+    0 0 50px #03e9f4,
+    0 0 200px #03e9f4;
+    transition: 0.5s ease-in-out;
+}
