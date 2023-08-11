@@ -20,6 +20,7 @@
     "netlify-lambda": "^1.6.3",
     "nodemailer": "^6.7.8",
     "nodemon": "^2.0.22",
+    "package.json": "^2.0.1",
     "request": "^2.88.2",
     "serverless-http": "^2.7.0",
     "stripe": "^8.67.0",
